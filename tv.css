@@ -1,0 +1,15 @@
+body
+{
+    background-size: cover;
+    background-position: center;
+    background: rgb(28,26,26);
+    background: linear-gradient(90deg, rgba(28,26,26,1) 0%, rgba(11,153,227,0.9925012241224614) 50%, rgba(211,219,220,1) 100%);  
+}
+
+canvas
+{
+    margin-top: 50px;
+    box-shadow: 10px 10px 10px black;
+    border-radius: 10px;
+}
+

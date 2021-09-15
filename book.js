@@ -1,18 +1,19 @@
 img = "";
 status = "";
-objects  = [];
+objects = [];
 
-function preload(){
-    img = loadImage('water_bottle.jpg');
+function preload() {
+    img = loadImage('book.jpg');
 }
+
 function setup() {
     canvas = createCanvas(550, 400);
     canvas.center();
     objectDetector = ml5.objectDetector('cocossd', modelLoaded);
-    document.getElementById("status").innerHTML  = "Status : Detecting Objects";
+    document.getElementById("status"),innerHTML = "Status: Detecting Objects";
 }
 
-function modelLoaded(){
+function modelLoaded() {
     console.log("Model Loaded!");
     status = true;
     objectDetector.detect(img, gotResult);
@@ -39,7 +40,7 @@ function draw() {
             text(objects[i].label + "" + percent + "%", objects[i].x, objects[i].y);
             noFill();
             stroke("#FF0000");
-            rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
+            rect(objects[i].x + 15, objects[i].y + 15, objects[i].width, objects[i].height);
         }
     }
 }
