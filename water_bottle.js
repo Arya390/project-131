@@ -5,13 +5,13 @@ function preload(){
     img = loadImage('water_bottle.jpg');
 }
 function setup() {
-    canvas = createCanvas(640, 420);
+    canvas = createCanvas(550, 400);
     canvas.center();
     objectDetector = ml5.objectDetector('cocossd', modelLoaded);
-    document.getElementNyId("status").innerHTML  = "Status : Detecting Objects";
+    document.getElementById("status").innerHTML  = "Status : Detecting Objects";
 }
 
-function modelloaded(){
+function modelLoaded(){
     console.log("Model Loaded!");
     status = true;
     objectDetector.detect(img, gotResult);
@@ -25,7 +25,7 @@ function gotResult(error, results) {
 }
 
 function draw() {
-    image(img, 0, 0, 640, 420);
+    image(img, 0, 0, 550, 400);
     fill("#FF0000");
     text("water bottle", 45, 75);
     noFill();
